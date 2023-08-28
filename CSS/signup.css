@@ -1,0 +1,164 @@
+*{
+    padding: 0;
+    margin: 0;
+    font-family: 'Karla', sans-serif;
+}
+body{
+    background-color: rgb(6,40,99);
+    position: relative;
+    width: 100%;
+}
+.header{
+    display: flex;
+    justify-content: center;
+    padding: 30px 0px;
+    margin-top: 20px;
+}
+.logo{
+    margin-top: 20px;
+    height: 40px;
+
+}
+.background-circle{
+    width: 200px;
+    height: 200px;
+    position: absolute;
+    left: -10px;
+    margin-top: -70px;
+}
+.background-pj{
+    width: 200px;
+    height: 200px;
+    position: absolute;
+    bottom: -559px;
+    left: -90px;
+}
+.background-j{
+    width: 200px;
+    height: 200px;
+    position: absolute;
+    right: 0px;
+}
+.background-p{
+    width: 200px;
+    height: 200px;
+    position: absolute;
+    bottom: -559px;
+    right: 0;
+}
+#loginspace{
+    position: absolute;
+    left: 35%;
+    bottom: -780px;
+    padding: 20px;
+    width: 30%;
+    height: fit-content;
+}
+
+.all-form{
+    width: 100%;
+    height: 720px;
+    background-color: white;
+    border-top-left-radius: 20px;
+    border-top-right-radius: 20px;
+    border-bottom-right-radius: 20px;
+    padding: 20px;
+}
+.h1{
+    display: flex;
+    justify-content: center;
+    color: rgb(8,62,158);
+    margin-top: 20px;
+    font-size: 24px;
+}
+.h1u{
+    display: flex;
+    justify-content: center;
+    color: RGB(74, 85, 104);
+    font-size: 14px;
+    margin-top: 10px;
+    line-height: 21px;
+    font-weight: 400;
+}
+.form{
+    margin-top: 40px;
+    width: 100%;
+}
+#fullname{
+    padding: 10px;
+    font-size: 12px;
+    font-weight: 700;
+    color: RGB(74, 85, 104);
+    line-height: 24px;
+ }
+.Email{
+   padding: 10px;
+   font-size: 12px;
+   font-weight: 700;
+   color: RGB(74, 85, 104);
+   line-height: 24px;
+}
+
+#phonenumber{
+    padding: 10px;
+    font-size: 12px;
+    font-weight: 700;
+    color: RGB(74, 85, 104);
+    line-height: 24px;
+ }
+.Password{
+    padding: 10px;
+    font-size: 12px;
+    font-weight: 700;
+    margin-top: 10px;
+    color: RGB(74, 85, 104);
+    line-height: 24px;
+}
+#promocode{
+    padding: 10px;
+    font-size: 12px;
+    font-weight: 700;
+    color: RGB(74, 85, 104);
+    line-height: 24px;
+ }
+.input1{
+    width: 100%;
+    height: 50px;
+    background-color: rgb(237,242,247);
+    outline: 0;
+    border: 0;
+    margin-top: 10px;
+    border-radius: 5px;
+}
+.login{
+    width: 100%;
+    height: 50px;
+    border-radius: 5px;
+    font-size: 14px;
+    font-weight: 700;
+    color: white;
+    background-color: rgb(13,96,216);
+    border: 0;
+}
+.logins{
+    padding: 10px;
+    margin-top: 20px;
+}
+.signup{
+    position: absolute;
+    left: 25%;
+    margin-top: 20px;
+}
+.l-signup{
+    color: white;
+    text-decoration: none;
+    display: flex;
+    justify-content: center;
+    font-size: 14px;
+    font-weight: 400;
+    margin-top: 40px;
+}
+.page{
+    text-decoration: none;
+    color: white;
+}

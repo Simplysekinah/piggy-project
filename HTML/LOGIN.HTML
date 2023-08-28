@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LOGIN</title>
+    <link rel="stylesheet" href="../CSS/LOGIN.CSS">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Karla:wght@200;400;500;700;800&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="body1">
+        <div>
+            <div>
+                <img src="../images/circle.png" alt="" class="background-circle">
+            </div>
+            <div>
+                <img src="../images/j.png" alt="" class="background-j">
+            </div>
+            <div>
+                <img src="../images/pj.png" alt="" class="background-pj">
+            </div>
+            <div>
+                <img src="../images/p.png" alt="" class="background-p">
+            </div>
+        </div>
+        <div>
+            <div >
+                <div class="header">
+                    <img src="https://dashboard.piggyvest.com/static/media/piggyvest-logo.0b78a8fa.svg" alt="" class="logo">
+                </div>
+                <div class="all-form" id="loginspace">
+                    <h1 class="h1">Login to your account</h1>
+                    <p class="h1u">securely login to your piggyvest</p>
+                    <form action="" class="form">
+                        <div class="Email">
+                            <label for="Email" class="emails">Email or Phone Number</label>
+                            <br>
+                            <input type="text" class="input1" id="input1"> 
+                        </div>
+                        <div class="Password">
+                            <label for="Password">Password</label>
+                            <br>
+                            <input type="text" class="input1" id="input2">
+                        </div>
+                        <div class="logins">
+                            <button class="login" onclick="dashboard(event)">LOG IN</button>
+                        </div>
+                    </form>
+
+                    <div class="signup">
+                        <div>
+                            <p class="l-signup">Don't have an account?<a href="./signup.html" class="register"> Register</a></p>
+                        </div>
+                        <div onclick="forgetPassword()" class="l-signup"> forgot password </div>
+                    </div>
+                </div>
+               
+           
+            </div>
+            <div id="forgotpassword">
+                <h1 class="h1">Forgot Password</h1>
+                <p class="h1u">Enter your email to reset your password</p>
+                <form action="" class="form">
+                    <div class="Email">
+                        <label for="Email" class="emails">Email or Phone Number</label>
+                        <br>
+                        <input type="text" class="input1"> 
+                    </div>
+                    <div class="logins">
+                        <button class="login" onclick="resetcode(event)">RESET PASSWORD</button>
+                    </div>
+                </form>
+                <div class="signup1">
+                    <div onclick="login()" class="l-login"> Back to login </div>
+                </div>
+            </div>
+            <div id="resetpassword">
+                <h1 class="h1">Reset password</h1>
+                    <p class="h1u">securely login to your piggyvest</p>
+                    <form action="" class="form">
+                        <div class="Email">
+                            <label for="Email" class="emails">Enter code</label>
+                            <br>
+                            <input type="text" class="input1"> 
+                        </div>
+                        <div class="Password">
+                            <label for="Password">Enter New Password</label>
+                            <br>
+                            <input type="text" class="input1">
+                        </div>
+                        <div class="Password">
+                            <label for="Password">confirm Password</label>
+                            <br>
+                            <input type="text" class="input1">
+                        </div>
+                        <div class="logins">
+                            <button class="login" onclick="loginpage()">RESET</button>
+                        </div>
+                    </form>
+            </div>
+        </div>
+    
+    </div>
+</body>
+<script src="../JAVASCRIPT/LOGIN.JS"></script>
+</html>

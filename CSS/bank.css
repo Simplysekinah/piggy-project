@@ -1,0 +1,766 @@
+*{
+    padding: 0;
+    margin: 0;
+    font-family: 'Karla', sans-serif;
+}
+body{
+    width: 100%;
+}
+.master{
+    display: flex;
+}
+#left{
+    width: 25%;
+    background-color: white;
+    height: 100vh;
+    padding: 15px;
+    border-top-right-radius: 10px;
+    border-bottom-right-radius: 5px;
+    margin-top: 20px;
+    cursor: pointer;
+    position: sticky;
+    top: 0;
+    left: 0;
+}
+#right{
+    width: 75%;
+    padding: 30px;
+    background-color: rgb(157,163,173);
+    overflow-y: scroll;
+}
+#right::-webkit-scrollbar{
+    display: none;
+}
+.first{
+    display: flex;
+    justify-content: space-between;
+}
+.person{
+    background-color: RGB(231, 67, 156);
+    color: white;
+    height: 40px;
+    width: 40px;
+    border-radius: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.atm{
+    width: 450px;
+    height: 300px;
+    background-color: rgb(6,40,99);
+    border-radius: 20px;
+    padding: 10px 20px 10px 20px;
+}
+#visa{
+    display: flex;
+    justify-content: space-between;
+    color: white;
+}
+.showacc{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 200px;
+    color: white;
+    font-size: 28px;
+    line-height: 24px;
+}
+.nameacc{
+    display: flex;
+    justify-content: space-between;
+    color: white;
+    margin-top: 30px;
+}
+.logo{
+    width: 200px;
+}
+.atmh{
+    display: flex;
+    gap: 50px;
+    width: 100%;
+}
+.exp{
+    display: flex;
+    gap: 15px;
+    margin-top: 10px;
+}
+.exp1{
+    display: flex;
+    margin-top: 10px;
+    gap: 15px;
+    /* justify-content: space-between; */
+}
+.airtime{
+    border: 1px solid black;
+    background-color: white;
+    padding: 10px;
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 150px;
+}
+.air{
+    background-color: rgb(6,40,99);
+    color: white;
+    width: 40px;
+    height: 40px;
+    border-radius: 100%;
+    padding: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.Transactions{
+    display: flex;
+    border: 1px solid black;
+    background-color: whitesmoke;
+    justify-content: space-between;
+    padding: 10PX;
+    border-radius: 10px;
+    margin-top: 10px;
+}
+.carousel{
+    width: 350px;
+    height: 300px;
+    border-radius: 20px;
+}
+#slide1, #slide2, #slide3{
+    width: 300px;
+    height: 300px;
+    border-radius: 10px;
+}
+.pi{
+    width: 100px;
+}
+.trans{
+    display: flex;
+    gap: 50px;
+}
+.moda{
+    padding: 20px;
+    background-color: white;
+    width: 300px;
+    height: 100vh;
+    position: absolute;
+    right: 0px;
+    animation-name: move;
+    animation-duration: 2s;
+    animation-timing-function: 2s ease;
+    animation-delay: 0s;
+}
+@keyframes move {
+    0%{
+        right: -300px;
+    }
+    100%{
+        right: 0px;
+    }
+}
+.transfer-div{
+    display: flex;
+    justify-content: center;
+    z-index: 1;
+}
+#Transfer{
+    background-color: rgba(169, 169, 169, 0.418);
+    height: 100vh;
+    width: 100%;
+    display: none;
+    position: absolute;
+    left: 0;
+    top: 0;
+    overflow-y: scroll;
+}
+#Transfer::-webkit-scrollbar{
+    display: none;
+}
+.vest{
+    padding: 10px;
+    background-color: rgb(6,40,99);
+    border-radius: 10px;
+    color: white;
+}
+.vest1{
+    padding: 10px;
+    background-color: rgb(6,40,99);
+    border-radius: 10px;
+    color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+#transfermoney{
+    background-color: rgba(169, 169, 169, 0.418);
+    width: 75%;
+    padding: 30px;
+    overflow-y: scroll;
+}
+#transfermoney::-webkit-scrollbar{
+    display: none;
+}
+.debit{
+    position: relative;
+    width: 80%;
+    margin-top: 25px;
+}
+#enter, #enter1, #enter2, #enter3, #enter4, #network, #entermt, #airamount{
+    background-color: transparent;
+    border: none;
+    border-bottom: 1px solid black;
+    width: 100%;
+    outline: none;
+}
+.aar{
+    margin-top: 10px;
+}
+.ang{
+    position: absolute;
+    right: 0;
+    top: 2px;
+}
+.center{
+   width: 500px;
+}
+#continue{
+    width: 200px;
+    padding: 10px;
+    border-radius: 10px;
+    background-color: white;
+    color: coral;
+    border: none;
+    margin-top: 25px;
+}
+.mony{
+    color: black;
+    height: 60px;
+    width: 150px;
+    border-radius: 10px;
+    border: 1px solid black;
+}
+.transs{
+    background-color: white;
+    position: absolute;
+    height: 120px;
+    width: 180px;
+    padding: 5px;
+    border-radius: 5px;
+    /* margin: 0 auto; */
+    /* display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center; */
+    margin-top: 100px;
+    z-index: 10;
+    top: 15%;
+    left: 45%;
+}
+#balance, #acctbalances{
+    background-color: rgba(169, 169, 169, 0.49);
+    height: 100vh;
+    width: 100%;
+    display: none;
+    position: absolute;
+    left: 0;
+    top: 0;
+    z-index: 300;
+}
+#bank,#sim{
+    background-color: rgba(169, 169, 169, 0.418);
+    height: 100vh;
+    width: 100%;
+    display: none;
+    position: absolute;
+    left: 0;
+    top: 0;
+}
+#home{
+    display: flex;
+    gap: 25px;
+    font-size: 22px;
+    padding: 25px;
+}
+#add{
+    display: flex;
+    gap: 25px;
+    font-size: 22px;
+    padding: 25px;
+}
+#fer{
+    display: flex;
+    gap: 25px;
+    font-size: 22px;
+    padding: 25px;
+}
+#profile{
+    display: flex;
+    gap: 25px;
+    font-size: 22px;
+    padding: 25px;
+}
+#pix{
+    border-radius: 100%;
+    width: 200px;
+    height: 200px;
+}
+.edit-icon{
+    position: absolute;
+    cursor: pointer;
+    top: 170px;
+    left: 420px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+#pics{
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+#profile-picture-input{
+    display: none;
+}
+#profilepage{
+    background-color: rgba(169, 169, 169, 0.418);
+    width: 75%;
+    padding: 30px;
+    align-items: center;
+    justify-content: center;
+    display: flex;
+    flex-direction: column;
+    overflow-y: scroll;
+    /* z-index: -300px; */
+}
+#profilepage::-webkit-scrollbar{
+    display: none;
+}
+#username{
+    display: flex;
+    gap: 10px;
+    justify-content: center;
+    align-items: center;
+    margin-top: 30px;
+}
+#edit-password{
+    display: flex;
+    gap: 10px;
+    justify-content: center;
+    align-items: center;
+    margin-top: 30px;
+}
+#change-password{
+    border: 0;
+    border-radius: 5px;
+    color: rgba(169, 169, 169, 0.418);
+    color: rgb(6,40,99);
+    width: 150px;
+    font-weight: 700;
+    font-size: 14px;
+}
+#profile-main{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.edi{
+    margin-top: -30px;
+}
+#addmoney{
+    background-color: rgba(169, 169, 169, 0.418);
+    width: 75%;
+    padding: 30px;
+    align-items: center;
+    justify-content: center;
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    overflow-y: scroll;
+}
+#addmoney::-webkit-scrollbar{
+    display: none;
+}
+#confirm{
+    height: 100vh;
+    background-color: rgba(169, 169, 169, 0.49);
+    height: 100vh;
+    width: 100%;
+    display: none;
+    position: absolute;
+    left: 0;
+    top: 0;
+    z-index: 300;
+}
+.small{
+    width: 30%;
+    height: 5rem;
+}
+#confirm1{
+    background-color: white;
+    position: absolute;
+    height: 150px;
+    width: 200px;
+    border-radius: 5px;
+    margin-top: 100px;
+    z-index: 10;
+    top: 15%;
+    left: 45%;
+}
+#bank{
+    background-color: rgba(169, 169, 169, 0.49);
+    height: 100vh;
+    width: 100%;
+    display: none;
+    position: absolute;
+    left: 0;
+    top: 0;
+    z-index: 300;
+}
+.transes,.sims{
+    background-color: white;
+    position: absolute;
+    height: 245px;
+    width: 200px;
+    border-radius: 5px;
+    margin-top: 100px;
+    z-index: 10;
+    top: 15%;
+    left: 45%;
+    padding: 5px;
+}
+.monys{
+    color: black;
+    height: 30px;
+    width: 180px;
+    border-radius: 10px;
+    border: 1px solid black;
+    margin-top: 5px;
+    padding: 3px;
+}
+#debitdiv{
+    display: flex;
+    justify-content: space-between;
+}
+#dashsign{
+    border-bottom: 1px dashed black;
+    /* background-color: transparent;
+    border: none;
+    width: 100%;
+    outline: none; */
+}
+#pindiv{
+    border-radius: 5px;
+    background-color: rgb(0, 81, 255);
+    height: 60px;
+    width: 40%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin: auto;
+    margin-top: 10px;
+}
+#pins{
+    border: 0;
+    outline: 0;
+    background-color: white;
+    border-radius: 5px;
+}
+#btnconfirm{
+    width: 50%;
+    color: white;
+    background-color: rgb(6,40,99);
+    margin-top: 40px;
+    border: 0;
+    border-radius: 10px;
+    height: 50px;
+    margin: auto;
+    margin-left: 130px;
+}
+#confirmTransfer{
+        background-color: rgba(169, 169, 169, 0.616);
+        width: 75%;
+        padding: 30px;
+        overflow-y: scroll;
+}
+#confirmTransfer::-webkit-scrollbar{
+    display: none;
+}
+.confirmDiv{
+    display: flex;
+    justify-content: center;
+    /* z-index: 1; */
+}
+.debit1{
+    border-bottom: 1px dashed black;
+}
+.suc{
+    width: 100px;
+    height: 100px;
+}
+#successful{
+    margin: 0 auto;
+    align-items: center;
+    margin-top: 40px;
+    line-height: 70px;
+    width: 100%;
+    background-color: rgb(6,40,99);
+    color: white;
+}
+#two{
+    display: flex;
+    gap: 40px;
+}
+.arrow-home{
+    display: flex;
+    gap: 30px;
+    align-items: center;
+}
+.hom{
+    font-size: 24px;
+}
+#topreceipts{
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+#topreceipts h2{
+    text-align: center;
+}
+#downreceipts{
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+#receiptslogo{
+    display: flex;
+    justify-content: center;
+}
+#downreceipts h4{
+    text-align: center;
+}
+#biller{
+    display: flex;
+    justify-content: center;
+}
+.linediv{
+    color: white;
+    height: 30px;
+    width: 180px;
+    border-radius: 10px;
+    /* border: 1px solid black; */
+    margin-top: 5px;
+    padding: 3px;
+    background-color: cornflowerblue;
+}
+#Buyairtime{
+    background-color: rgb(169, 169, 169);
+    width: 70%;
+    padding: 30px;
+    align-items: center;
+    justify-content: center;
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    overflow-y: scroll;
+    position: absolute;
+    top: 0;
+    /* height: 100vh; */
+    z-index: 200;
+}
+#Buyairtime::-webkit-scrollbar{
+    display: none;
+}
+#aircontinue{
+    background-color: rgb(6,40,99);
+    color: white;
+    border-radius: 20px;
+    border: 0;
+    margin: 0 auto;
+    margin-top: 15px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100px;
+    height: 30px;
+}
+#dash, #dash1, #dash2, #dash3{
+    border-bottom: 1px dashed white;
+    background-color: white;
+    width: 30px;
+    height: 20px;
+    border: 0;
+    /* outline: none; */
+    border-radius: 10px;
+}
+#dash, #dash1, #dash2, #dash3:focus{
+   text-align: center;
+}
+#pinenter{
+    display: flex;
+    width: 150px;
+    justify-content: space-between;
+}
+#selectbiller1, #airtimedetails1{
+    background-color: white;
+    position: absolute;
+    height: 200px;
+    width: 300px;
+    border-radius: 5px;
+    margin-top: 200px;
+    z-index: 80;
+    top: 15%;
+    left: 45%;
+    padding: 10px;
+    position: absolute;
+    top: 0;
+}
+#selectbiller1 h2{
+    margin: 0 auto;
+}
+#phonenumber{
+    background-color: transparent;
+    border: none;
+    border-bottom: 1px solid black;
+    width: 100%;
+    outline: none;
+    margin-top: 15px;
+}
+#selectbiller,#airtimedetails,#airsuccess{
+    background-color: rgba(169, 169, 169, 0.729);
+    height: 100vh;
+    width: 100%;
+    display: none;
+    position: absolute;
+    left: 0;
+    top: 0;
+    z-index: 100;
+}
+#airdebit{
+    display: flex;
+    align-items: center;
+}
+#buyair{
+    padding: 20px;
+    background-color: white;
+    width: 500px;
+    height: 100vh;
+    z-index: 100;
+    position: absolute;
+    right: 0px;
+    top: 0;
+    animation-name: move;
+    animation-duration: 2s;
+    animation-timing-function: 2s ease;
+    animation-delay: 0s;
+}
+@keyframes move {
+    0%{
+        right: -300px;
+    }
+    100%{
+        right: 0px;
+    }
+}
+#buytop{
+    display: flex;
+}
+#processing{
+    padding: 70px 20px 20px 20px;
+    background-color: rgb(6,40,99);
+    width: 500px;
+    height: 100vh;
+    z-index: 100;
+    position: absolute;
+    right: 0px;
+    top: 0;
+    animation-name: move;
+    animation-duration: 2s;
+    animation-timing-function: 2s ease;
+    animation-delay: 0s;
+}
+@keyframes move {
+    0%{
+        right: -300px;
+    }
+    100%{
+        right: 0px;
+    }
+}
+.rev{
+    height: 30px;
+    margin-top: 70px;
+    margin: 0 auto;
+    display: flex;
+    text-align: center;
+    align-items: center;
+    justify-content: center;
+}
+.ro{
+    color: white;
+    width: 200px;
+    height: 200px;
+}
+.sus{
+    font-size: 100px;
+    color: white;
+}
+#suss{
+    margin: 0 auto;
+    display: flex;
+    text-align: center;
+    align-items: center;
+    justify-content: center;
+}
+.wh{
+    margin: 0 auto;
+    display: flex;
+    text-align: center;
+    align-items: center;
+    justify-content: center;
+}
+#airsuccess1{
+    background-color: rgb(6,40,99);
+    position: absolute;
+    height: 400px;
+    width: 400px;
+    border-radius: 10px;
+    margin-top: 50px;
+    z-index: 80;
+    top: 10%;
+    left: 25%;
+    padding: 10px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    
+
+}
+.suf{
+    margin: 0 auto;
+    display: flex;
+    text-align: center;
+    align-items: center;
+    justify-content: center;
+}
+/* #buyair1{
+    background-color: rgba(169, 169, 169, 0.418);
+    height: 100vh;
+    width: 100%;
+    display: none;
+    position: absolute;
+    left: 0;
+    top: 0;
+    overflow-y: scroll;
+}
+#buyair1::-webkit-scrollbar{
+    display: none;
+} */

@@ -1,0 +1,476 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>dashboard</title>
+    <link rel="stylesheet" href="../CSS/dashboard.css">
+    <link rel="stylesheet" href="../fonts/icofont/icofont.min.css">
+    <script src="https://kit.fontawesome.com/81f35a7969.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Karla:wght@200;400;500;700;800&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="main">
+        <div id="left">
+            <div id="menu">
+                <div onclick="del()">
+                    <span class="material-symbols-outlined">menu</span>
+                </div>
+                <img class="home" src="https://dashboard.piggyvest.com/static/media/piggyvest-logo.0b78a8fa.svg" alt="" id="logo">
+            </div>
+            <div class="content">
+                <div id="home">
+                    <div>
+                        <i class="fa-solid fa-house" onclick="homepage()"></i>
+                    </div>
+                    <div onclick="homepage()" id="hom" class="home">Home</div>
+                </div>
+                <div id="savings">
+                    <div>
+                        <i class="icofont-dart" onclick="saved()"></i>
+                    </div>
+                    <div id="savingss" onclick="saved()" class="home">Savings</div>
+                </div>
+                <div id="home">
+                    <div> <i class="fa-solid fa-paper-plane" onclick="inpage(event)" ></i></div>
+                    <div onclick="inpage(event)" id="inv" class="home">Invest</div>
+                </div>
+                <div id="home">
+                    <div> <span class="material-symbols-outlined" onclick="account(event)" > person</span></div>
+                    <div onclick="account(event)" id="acc" class="home">Account</div>
+                </div>
+            </div>
+            <div id="homes">
+                <div><i class="fa-solid fa-power-off" onclick="logout(event)"></i></div>
+                <div id="out" class="home" onclick="logout(event)">Logout</div>
+            </div>
+        </div>
+        <div id="right">
+            <div class="row1">
+                <div>
+                    <h1 id="loguser"></h1>
+                    <p id="day"></p>
+                </div>
+                <div class="person" onclick="pro()">
+                    <i class="fa-solid fa-user-large"></i>
+                </div>
+            </div>
+            <div class="inmin">
+                <div>
+                    <i class="fa-solid fa-arrows-rotate"></i>
+                </div>
+                <div>
+                    <button class="quick">+QUICKSAVE</button>
+                </div> 
+            </div>
+            <div class="min">
+                <div class="row2">
+                    <a href="" id="save">
+                        <div>
+                            <i class="fa-solid one fa-shield"></i>
+                        </div>
+                        <div>
+                            <p class="heading">Total Savings</p>
+                            <p class="amount">₦103,016.44</p>
+                        </div>
+                    </a>
+                    <a href="" id="investment">
+                        <div>
+                            <i class="fa-solid two fa-arrow-trend-up" ></i>
+                        </div>
+                        <div>
+                            <p class="heading">Total Investment</p>
+                            <p class="amount">₦0.00</p>
+                        </div>
+                    </a>
+                    <a href="" id="dollar">
+                        <div>
+                            <i class="fa-solid three fa-dollar-sign"></i>
+                        </div>
+                        <div>
+                            <p class="heading">Flex Dollar</p>
+                            <p class="amount">₦0.00</p>
+                        </div>
+                    </a>
+                    <a href="bank.html" id="naira">
+                        <div>
+                            <i class="fa-solid four fa-film"></i>
+                        </div>
+                        <div>
+                            <p class="headings">Flex Naira</p>
+                            <p class="amount">₦ <span id="acctBal">5000</span></p>
+                        </div>
+                    </a>
+                    <a href="" id="PocketApp">
+                        <div>
+                            <i class="fa-solid five fa-at"></i>
+                        </div>
+                        <div>
+                            <p class="heading">Link PocketApp</p>
+                            <p class="amount">₦***</p>
+                        </div>
+                    </a>
+                </div>
+            </div>
+            <div class="mode">
+                <div class="mean">
+                    <p class="todo">TO-DO LIST</p>
+                    <div id="refer">
+                        <input type="radio">
+                        <p class="safe">Safelock ₦55,716 for 61-90 days</p>
+                    </div>
+                    <div id="refer">
+                        <input type="radio">
+                        <p class="safe">Safelock ₦55,716 for 61-90 days</p>
+                    </div>
+                    <div id="refer">
+                        <input type="radio">
+                        <p class="safe">Safelock ₦55,716 for 61-90 days</p>
+                    </div>
+                    <div id="refer">
+                        <input type="radio">
+                        <p class="safe">Safelock ₦55,716 for 61-90 days</p>
+                    </div>
+                    <div>
+                        <div class="second">
+                            <div>
+                                <span class="material-symbols-outlined">language</span>
+                            </div>
+                            <div>
+                                <p class="insecond">Credited to challenge.[My Savings]</p>
+                                <p class="inseconds">1 day ago</p>
+                            </div>
+                        </div>
+                        <div class="second">
+                            <div>
+                                <i class="fa-regular fa-thumbs-up"></i>
+                            </div>
+                            <div>
+                                <p  class="insecond">Credited to challenge.[My Savings]</p>
+                                <p class="inseconds">1 day ago</p>
+                            </div>
+                        </div>
+                        <div class="second">
+                            <div>
+                                <i class="fa-solid fa-lock"></i>
+                            </div>
+                            <div>
+                                <p  class="insecond">Credited to challenge.[My Savings]</p>
+                                <p class="inseconds">1 day ago</p>
+                            </div>
+                        </div>
+                        <div class="second">
+                            <div>
+                                <span class="material-symbols-outlined">language</span>
+                            </div>
+                            <div>
+                                <p  class="insecond">Credited to challenge.[My Savings]</p>
+                                <p class="inseconds">1 day ago</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="down">
+                        <p class="recent">RECENT ACTIVITIES</p>
+                        <div class="last">
+                            <div class="last1">
+                                <div class="last2">
+                                    <i class="fa-solid fa-money-bill"></i>
+                                </div>
+                                <div>
+                                    <p class="core">Core savings credited.</p>
+                                    <p class="cores">2 hrs ago</p>
+                                </div>
+                            </div>
+                            <div class="core">₦100.00</div>
+                        </div>
+                        <div class="last">
+                            <div class="last1">
+                                <div class="last2">
+                                    <span class="material-symbols-outlined">language</span>
+                                </div>
+                                <div>
+                                    <p class="core">Credited to challenge.[My Savings]</p>
+                                    <p class="cores">1 day ago</p>
+                                </div>
+                            </div>
+                            <div class="core">₦500.00</div>
+                        </div>
+                        <div class="last">
+                            <div class="last1">
+                                <div class="last2">
+                                    <span class="material-symbols-outlined">language</span>
+                                </div>
+                                <div>
+                                    <p class="core">Core savings credited.</p>
+                                    <p class="cores">1 day ago</p>
+                                </div>
+                            </div>
+                            <div class="core">₦100.00</div>
+                        </div>
+                        <div class="last">
+                            <div class="last1">
+                                <div class="last2">
+                                    <span class="material-symbols-outlined">language</span>
+                                </div>
+                                <div>
+                                    <p class="core">Credited to challenge.[My Savings]</p>
+                                    <p class="cores">2 days ago</p>
+                                </div>
+                            </div>
+                            <div class="core">₦500.00</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="media">
+                    <p class="todo">SAVER OF THE MONTH: TOLA</p>
+                    <div>
+                        <img src="../images/PIGGY.jpeg" alt="" class="img">
+                    </div>
+                    <p class="todo">DOWNLOAD THE MOBILE APP</p>
+                    <div>
+                        <img src="" alt="">
+                        <img src="" alt="">
+                    </div>
+                    <p id="meet" class="todo">₦MEETAPIGGYVESTSAVER: TOLANI AYENI</p>
+                    <div>
+                        <img src="../images/PIGGY.jpeg" alt="" class="img1">
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div id="savingsPage">
+            <div>
+                <div>
+                    <h1 class="master">Savings</h1>
+                    <p class="under">Let's see how well you're doing.</p>
+                </div>
+                <div>
+
+                </div>
+            </div>
+            <div id="second">
+                <div id="amount">
+                    <p class="totals">Total Balance</p>
+                    <div class="total">₦103,616.44</div>
+                </div>
+                <div>
+                    <p class="build">BUILD YOUR SAVINGS</p>
+                    <div>
+                        <img src="../images/Saving-dark_v1.png" alt="" class="img2">
+                    </div>
+                </div>
+            </div>
+            <div id="third">
+                <div class="section1">
+                    <div class="box">
+                        <i class="fa-solid one fa-shield"></i>
+                        <div class="piggybank">Piggybank</div>
+                        <p class="inner">Strict savings automatically,Daily,<br>weekly or Monthly,10% p.a</p>
+                        <div class="cost">#8900.00</div>
+                    </div>
+                    <div class="box1">
+                        <i class="fa-solid four fa-film"></i>
+                        <div class="piggybank1">Piggybank</div>
+                        <p class="inner">Strict savings automatically,Daily,<br>weekly or Monthly,10% p.a</p>
+                        <div class="cost1">#8900.00</div>
+                    </div>
+                    <div class="box2">
+                        <span class="material-symbols-outlined">safety_check</span>
+                        <div class="piggybank2">Piggybank</div>
+                        <p class="inner">Strict savings automatically,Daily,<br>weekly or Monthly,10% p.a</p>
+                        <div class="cost2">#8900.00</div>
+                    </div>
+                </div>
+                <div class="section2">
+                    <div class="box3">
+                        <span class="material-symbols-outlined">safety_check</span>
+                        <div class="piggybank3">Piggybank</div>
+                        <p class="inner">Strict savings automatically,Daily,<br>weekly or Monthly,10% p.a</p>
+                        <div class="cost3">#8900.00</div>
+                    </div>
+                    <div class="box4">
+                        <span class="material-symbols-outlined">safety_check</span>
+                        <div class="piggybank4">Piggybank</div>
+                        <p class="inner">Strict savings automatically,Daily,<br>weekly or Monthly,10% p.a</p>
+                        <div class="cost4">#8900.00</div>
+                    </div>
+                    <div class="box5">
+                        <i class="fa-solid fa-at"></i>
+                        <div class="piggybank5">Piggybank</div>
+                        <p class="inner">Strict savings automatically,Daily,<br>weekly or Monthly,10% p.a</p>
+                        <div  class="cost5">#8900.00</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div id="investPage">
+            <div class="invset">
+                <h1 class="section">Investify</h1>
+                <div class="person">
+                    <i class="fa-solid fa-user-large"></i>
+                </div>
+            </div>
+            <div class="holder">
+                <div id="invst">
+                    <div class="invest1">
+                        <nav>
+                            <p class="total-b">Total Balance</p>
+                            <div class="invest-b">#0.00</div>
+                        </nav>
+                        <div class="learn">
+                            <p class="more">Learn More</p>
+                        </div>
+                    </div>
+                    <section>
+                        <header>
+                            <a href="" class="lin">
+                                <div>
+                                    <i class="fa-brands fa-gg-circle"></i>
+                                </div>
+                                <span>My Investment</span>
+                            </a>
+                            <a href="" class="lin">
+                                <div>
+                                    <i class="fa-regular fa-compass"></i>
+                                </div>
+                                <span>Explore</span>
+                            </a>
+                            <a href="" class="lin">
+                                <div>
+                                    <span class="material-symbols-outlined"> task_alt  </span>
+                                </div>
+                                <span>Completed</span>
+                            </a>
+                        </header>
+                        <div id="myinvestment">
+                            <h1 class="starti">Start Investing!</h1>
+                            <p>Start Investing in verified opportunities Let's help you get <br> started.</p>
+                            <div id="btns">
+                                <button id="btn1">INVEST NOW</button>
+                                <button id="btn2">LEARN MORE</button>
+                            </div>
+                        </div>
+                        <div id="explore"></div>
+                        <div id="completed"></div>
+                    </section>
+                </div>
+                <div class="invest2">
+                    <div class="roi">
+                        <p class="expected">EXPECTED ROI</p>
+                        <div class="up">Up to 25%</div>
+                        <p class="per">Per Annum</p>
+                    </div>
+                    <div class="invest3">
+                        <p class="intense">INTENSIFY</p>
+                        <img src="../images/intensify.png" alt="" class="intensify">
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div id="accountpage">
+            <h1>Account</h1>
+            <p id="loguser"></p>
+            <main>
+                <div>
+                    <div><img src="../images/2-factor-min.png" alt="" class="im"></div>
+                    <div class="mass">
+                        <div class="today">
+                            <i class="fa-solid fa-percent"></i>
+                            <div>Today's Rate</div>
+                        </div>
+                        <div class="today">
+                            <i class="fa-regular fa-user"></i>
+                            <div>My Account Settings</div>
+                        </div>
+                        <div class="today">
+                            <i class="fa-solid fa-paperclip"></i>
+                            <div>Self Help</div>
+                        </div>
+                        <div class="today">
+    
+                            <div>Update KYC</div>
+                        </div>
+                        <div class="today">
+                            <i class="fa-solid fa-share-nodes"></i>
+                            <div>Refer & Earn #1,000.00</div>
+                        </div>
+                        <div class="today">
+                            <i class="fa-solid fa-dollar-sign"></i>
+                            <div>Withdraw Funds</div>
+                        </div>
+                        <div class="today">
+                            <i class="fa-regular fa-credit-card"></i>
+                            <div>My Card & Bank Settings</div>
+                        </div>
+                        <div class="today">
+                            <i class="fa-regular fa-comment"></i>
+                            <div>My Story</div>
+                        </div>
+                        <div class="today">
+                            <div>View PiggyVest Library</div>
+                        </div>
+                        <div class="today">
+                            <i class="fa-regular fa-phone"></i>
+                            <div>Contact Us</div>
+                        </div>
+                        <div class="today" onclick="logout()">
+                            <i class="fa-solid fa-arrow-right-from-bracket"></i>
+                            <div>Log Out</div>
+                        </div>
+                    </div>
+                </div>
+                <div>
+                    <div class="persons">
+                        <i class="fa-solid per fa-user-large"></i>
+                    </div>
+                    <p id="loguser">akinola sekinat</p>
+                    <div class="acc">
+                        <div class="hold">
+                            <h3>09876543222</h3>
+                            <p>Account number</p>
+                        </div>
+                        <div class="hold">
+                            <h3>4</h3>
+                            <p>Piggy Points</p>
+                        </div>
+                    </div>
+                    <div class="acc">
+                        <div class="hold">
+                            <h3># PiggyLink ID</h3>
+                            <p>Create a PiggyLink ID </p>
+                        </div>
+                        <div class="hold">
+                            <h3>#0</h3>
+                            <p>Referer Earnings</p>
+                        </div>
+                    </div>
+                </div>
+            </main>
+        </div>
+        <div id="navdown">
+            <ul class=" but-down">
+                <li id="navdown-li" onclick="homepage()">
+                    <i class="fa-solid fa-house" id="home-down"></i>
+                    <p id="home-p">Home</p>
+                </li>
+                <li id="navdown-li" onclick="saved()">
+                    <i class="icofont-dart" id="savings-down"></i>
+                    <p id="savings-p">Savings</p>
+                </li>
+                <li id="navdown-li" onclick="inpage(event)" >
+                    <i class="fa-solid fa-paper-plane" id="invest-down" ></i>
+                    <p id="invest-p">Invest</p>
+                </li>
+                <li id="navdown-li" onclick="account(event)">
+                    <i class="fa-solid fa-power-off" id="acct-down"></i>
+                    <p id="acc-p">Account</p>
+                </li>
+            </ul>
+        </div>
+    </div>
+</body>
+<script src="../JAVASCRIPT/dashboard.js"></script>
+</html>

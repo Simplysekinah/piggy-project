@@ -1,0 +1,167 @@
+*{
+    padding: 0;
+    margin: 0;
+    font-family: 'Karla', sans-serif;
+}
+body{
+    background-color: #f2f7f8;
+}
+.container{
+    /* padding: 30px; */
+    padding-left: 50px;
+    padding-right: 50px;
+    /* position: relative; */
+    /* background-color: RGB(61, 79, 96); */
+    /* background-color: #f2f7f8; */
+}
+nav{
+    display: flex;
+    justify-content: space-between;
+    position: sticky;
+    align-items: center;
+    top: 0;
+    width: 100%;
+    z-index: 10;
+    height: 80px;
+}
+.nav{
+    /* background-color: red; */
+    width: 100%;
+}
+.nav.scrolled{
+    background-color: white;
+}
+.list{
+    display: flex;
+    gap: 50px;
+}
+.button-holder{
+    display: flex;
+    gap: 10px;
+}
+#signin{
+    border: 1px solid  RGB(12, 24, 37);
+    width: 100px;
+    height: 50px;
+    border-radius: 15px;
+    color: RGB(12, 24, 37);
+    font-size: 16px;
+    line-height: 27.2px;
+    font-weight: 600;
+}
+#signs{
+    text-decoration: none;
+    color: RGB(12, 24, 37);
+}
+#createaccount{
+    width: 200px;
+    height: 50px;
+    border-radius: 15px;
+    background-color: RGB(12, 24, 37);
+    color: white;
+    font-size: 16px;
+    line-height: 27.2px;
+    font-weight: 600;
+}
+#creates{
+    text-decoration: none;
+    color: white;
+}
+.listing{
+    display: flex;
+    list-style-type: none;
+    align-items: center;
+    gap: 20px;
+    font-size: 16px;
+    line-height: 27.2px;
+    font-weight: 700;
+}
+section{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 100%;
+    margin-top: 100px;
+}
+.side{
+    padding-top: 150px;
+}
+.h1{
+    font-size: 48px;
+    font-weight: 700;
+    line-height: 56px;
+    color: RGB(18, 34, 49);
+}
+.over{
+    font-size: 20px;
+font-weight: 400;
+line-height: 32px;
+color:  RGB(61, 79, 96);
+}
+.bg{
+    width: 500px;
+    height: 500px;
+    /* position: relative; */
+}
+.images{
+    animation-name: sekinat;
+    animation-duration: 2s;
+    animation-iteration-count: infinite;
+    animation-direction: alternate;
+    position: relative;
+    animation-timing-function: .3s ease;
+}
+@keyframes sekinat {
+    0%{
+        top: 70px;
+    }
+    100%{
+        top: 30px;
+    }
+}
+.one{
+    width: 200px;
+    height: 80px;
+    position: absolute;
+    right: -30px;
+    top: 110px;
+}
+.two{
+    width: 200px;
+    height: 60px;
+    position: absolute;
+    /* right: 180px; */
+    /* bottom: -20px; */
+    top: 330px;
+    right: -30px;
+}
+.three{
+    width: 200px;
+    height: 60px;
+    position: absolute;
+    right: 400px;
+    top: 130px;
+}
+.four{
+    width: 200px;
+    height: 80px;
+    position: absolute;
+    right: 400px;
+    top: 300px;
+   
+}
+.five{
+    width: 200px;
+    height: 80px;
+    position: absolute;
+    right: 180px;
+    bottom: -35px;
+}
+#second-div{
+    display: flex;
+    gap: 40px;
+}
+/* #padlock{
+    background-color: white;
+    padding: 8px;
+} */
