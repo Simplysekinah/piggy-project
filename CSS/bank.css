@@ -9,7 +9,7 @@ body{
 .master{
     display: flex;
 }
-#left{
+/* #left{
     width: 25%;
     background-color: white;
     height: 100vh;
@@ -30,7 +30,7 @@ body{
 }
 #right::-webkit-scrollbar{
     display: none;
-}
+} */
 .first{
     display: flex;
     justify-content: space-between;

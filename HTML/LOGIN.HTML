@@ -8,6 +8,9 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Karla:wght@200;400;500;700;800&display=swap" rel="stylesheet">
+<script src="https://www.gstatic.com/firebasejs/10.13/firebase-app-compat.js"></script>
+<script src="https://www.gstatic.com/firebasejs/10.13/firebase-auth-compat.js"></script>
+<script src="https://www.gstatic.com/firebasejs/10.13/firebase-database-compat.js"></script>
 </head>
 <body>
     <div class="body1">
@@ -51,7 +54,7 @@
 
                     <div class="signup">
                         <div>
-                            <p class="l-signup">Don't have an account?<a href="./signup.html" class="register"> Register</a></p>
+                            <p class="l-signup">Don't have an account?<a href="#" onclick="signup(event)" class="register"> Register</a></p>
                         </div>
                         <div onclick="forgetPassword()" class="l-signup"> forgot password </div>
                     </div>
@@ -66,7 +69,7 @@
                     <div class="Email">
                         <label for="Email" class="emails">Email or Phone Number</label>
                         <br>
-                        <input type="text" class="input1"> 
+                        <input type="text" class="input1" id="email"> 
                     </div>
                     <div class="logins">
                         <button class="login" onclick="resetcode(event)">RESET PASSWORD</button>
@@ -83,17 +86,17 @@
                         <div class="Email">
                             <label for="Email" class="emails">Enter code</label>
                             <br>
-                            <input type="text" class="input1"> 
+                            <input type="text" class="input1" id="codePassword"> 
                         </div>
                         <div class="Password">
                             <label for="Password">Enter New Password</label>
                             <br>
-                            <input type="text" class="input1">
+                            <input type="text" class="input1" id="newPassword">
                         </div>
                         <div class="Password">
                             <label for="Password">confirm Password</label>
                             <br>
-                            <input type="text" class="input1">
+                            <input type="text" class="input1" id="confirmPassword">
                         </div>
                         <div class="logins">
                             <button class="login" onclick="loginpage()">RESET</button>

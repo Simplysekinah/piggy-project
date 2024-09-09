@@ -20,7 +20,7 @@
       ],
       "id": 1,
       "input6": "391943626835",
-      "accountBalance": 2189.74,
+      "accountBalance": 15189.74,
       "pin": "1111"
     },
     {
@@ -95,12 +95,38 @@
           "to": "08033892741",
           "date": "8/28/2023",
           "amount": "100"
+        },
+        {
+          "from": "sekinat",
+          "to": "08033892741",
+          "date": "9/6/2023",
+          "amount": "100"
         }
       ],
       "id": 3,
       "input6": "358435922572",
-      "accountBalance": 1889.7399999999998,
+      "accountBalance": 1789.7399999999998,
       "pin": "3333"
+    },
+    {
+      "input1": "developer daniel",
+      "input2": "developerdaniel@gmail.com",
+      "input3": "08122553340",
+      "input4": "sekinat",
+      "input5": "qwerdtyguh",
+      "profilePicture": "file:///C:/Users/HP/Desktop/Desktop/project%20level%203/images/PIGGY.jpeg",
+      "transactions": [
+        {
+          "from": "developer daniel",
+          "to": "08033892741",
+          "date": "29/02/2024",
+          "amount": "100"
+        }
+      ],
+      "id": 4,
+      "input6": "303525895259",
+      "accountBalance": 11900,
+      "pin": "1234"
     }
   ],
   "upload-profile-picture": [
@@ -110,32 +136,26 @@
     }
   ],
   "login": {
-    "input1": "sekinat",
-    "input2": "sodiqazeez@gmail.com",
+    "input1": "akinola sekinat",
+    "input2": "akinolasekinat123@gmail.com",
     "input3": "08149753152",
     "input4": "sekinat",
     "input5": "08149753152",
     "profilePicture": "file:///C:/Users/HP/Desktop/Desktop/project%20level%203/images/PIGGY.jpeg",
     "transactions": [
       {
-        "from": "Sodiq  Azeez",
+        "from": "akinola sekinat",
         "to": "akinola sekinat",
-        "bank": "GTBank",
+        "bank": "Access Bank",
         "date": "8/28/2023",
         "fee": 10.26,
         "amount": "5000",
         "narration": "love"
-      },
-      {
-        "from": "Sodiq  Azeez",
-        "to": "08033892741",
-        "date": "8/28/2023",
-        "amount": "100"
       }
     ],
-    "id": 3,
-    "input6": "358435922572",
-    "accountBalance": 1889.7399999999998,
-    "pin": "3333"
+    "id": 1,
+    "input6": "391943626835",
+    "accountBalance": 2189.74,
+    "pin": "1111"
   }
 }

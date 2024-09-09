@@ -73,6 +73,7 @@ let processing = document.getElementById("processing")
 let atm = JSON.parse(localStorage.getItem("accn"))
 
 
+
 let logusers = loggedUser.input1
 
 let names = loggedUser.input1
@@ -159,13 +160,13 @@ function uploadProfilePicture() {
         let myObj = {
             item: result
         }
-        fetch(`http://localhost:4567/signup/`, {
-            headers: {
-                "Content-Type": "application/json"
-            },
-            method: "PATCH",
-            body: JSON.stringify(myObj)
-        })
+        // fetch(`http://localhost:4567/signup/`, {
+        //     headers: {
+        //         "Content-Type": "application/json"
+        //     },
+        //     method: "PATCH",
+        //     body: JSON.stringify(myObj)
+        // })
         pix.src = result
         localStorage.setItem("img", result)
     })

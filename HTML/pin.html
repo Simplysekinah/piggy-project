@@ -5,16 +5,20 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>PIN</title>
     <link rel="stylesheet" href="../CSS/pin.css">
+    <script src="https://www.gstatic.com/firebasejs/10.13/firebase-app-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/10.13/firebase-auth-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/10.13/firebase-database-compat.js"></script>
+<script src="https://www.gstatic.com/firebasejs/10.13/firebase-storage-compat.js"></script>
 </head>
 <body>
     <div class="master">
         <img src="https://dashboard.piggyvest.com/static/media/piggyvest-logo.0b78a8fa.svg" alt="" id="logo">
         <h2>Enter Pin</h2>
         <div id="contain">
-            <input type="password" id="dash" placeholder="" >
-            <input type="password" id="dash1" placeholder="">
-            <input type="password" id="dash2" placeholder="">
-            <input type="password" id="dash3" placeholder="">
+            <input type="password" id="dash"  maxlength="1"  oninput="moveToNext(this ,'dash1')" >
+            <input type="password" id="dash1" maxlength="1" oninput="moveToNext(this ,'dash2')">
+            <input type="password" id="dash2" maxlength="1" oninput="moveToNext(this ,'dash3')">
+            <input type="password" id="dash3" maxlength="1" >
         </div>
         <button id="continue" onclick="con()">Continue</button>
     </div>
