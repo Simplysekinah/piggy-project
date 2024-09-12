@@ -50,15 +50,24 @@ function signup(event) {
                         referrerCode: input5.value,
                         profilePicture: "",
                         currentBalance: 2000,
-                        transactions: [],
+                        transactions: [
+                            // {
+                            // from: vestBank,
+                            // to: input1.value,
+                            // bank: vestBank,
+                            // date: lovelyday,
+                            // amount: 2000,
+                            // narration: coupon
+                            // }
+                    ],
                         pin: "",
                         accountNumber: "",
-                        uid:user.uid
+                        uid: user.uid
                     };
                     firebase.auth().currentUser.sendEmailVerification()
                         .then(() => {
                             firebase.database().ref(`users/${index}`).set(data).then(() => alert('success')).catch((err) => alert(err));
-                            setTimeout(() => { 
+                            setTimeout(() => {
                                 window.location.href = 'pin.html'
                             }, 3000);
                         });

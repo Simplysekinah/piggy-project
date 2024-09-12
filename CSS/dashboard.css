@@ -377,6 +377,7 @@
     justify-content: center;
     font-size: 14px;
     font-weight: 700;
+    position: relative;
 }
 .insecond{
     color:RGB(13, 96, 216);

@@ -162,7 +162,17 @@ body{
 .transfer-div{
     display: flex;
     justify-content: center;
-    z-index: 1;
+    align-items: center;
+    flex-direction: column;
+    z-index: 10;
+    background-color: gray;
+    width: 350px;
+    height: 60vh;
+    /* top: 0; */
+    /* left: 30%; */
+    padding: 20px;
+    margin: 90px 60px;
+    /* position: absolute; */
 }
 #Transfer{
     background-color: rgba(169, 169, 169, 0.418);
@@ -192,11 +202,22 @@ body{
     justify-content: center;
     align-items: center;
 }
-#transfermoney{
+#rotate{
+    position: relative;
+}
+#transfermoney,#confirmTransferhis{
     background-color: rgba(169, 169, 169, 0.418);
-    width: 75%;
-    padding: 30px;
+    width: 100%;
+    height: 100vh;
+    /* padding: 30px; */
     overflow-y: scroll;
+    position: absolute;
+    top: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    /* z-index: -1; */
 }
 #transfermoney::-webkit-scrollbar{
     display: none;
@@ -206,6 +227,7 @@ body{
     width: 80%;
     margin-top: 25px;
 }
+
 #enter, #enter1, #enter2, #enter3, #enter4, #network, #entermt, #airamount{
     background-color: transparent;
     border: none;
@@ -222,7 +244,7 @@ body{
     top: 2px;
 }
 .center{
-   width: 500px;
+   /* width: 500px; */
 }
 #continue{
     width: 200px;
@@ -372,14 +394,16 @@ body{
 }
 #addmoney{
     background-color: rgba(169, 169, 169, 0.418);
-    width: 75%;
-    padding: 30px;
+    width: 100%;
+    height: 100vh;
     align-items: center;
     justify-content: center;
     display: flex;
     flex-direction: column;
     text-align: center;
     overflow-y: scroll;
+    position: absolute;
+    top: 0;
 }
 #addmoney::-webkit-scrollbar{
     display: none;
@@ -394,6 +418,18 @@ body{
     left: 0;
     top: 0;
     z-index: 300;
+}
+.confirms{
+    height: 70vh;
+    background-color: gray;
+    /* height: 100vh; */
+    width: 30%;
+    /* margin: 0 auto; */
+    /* display: block;  */
+    position: absolute;
+    left: 30%;
+    top: 15%;
+    /* z-index: 300; */
 }
 .small{
     width: 30%;
