@@ -25,6 +25,7 @@ let bank = document.getElementById("bank")
 let enter1 = document.getElementById("enter1")
 let enter2 = document.getElementById("enter2")
 let enter3 = document.getElementById("enter3")
+let enter4 = document.getElementById("enter4")
 let showmoneys = document.getElementById("showmoneys")
 let showaccs = document.getElementById("showaccs")
 let contain = document.getElementById("contain")
@@ -42,14 +43,15 @@ let btnconfirm = document.getElementById("btnconfirm")
 let topreceipts = document.getElementById("topreceipts")
 let downreceipts = document.getElementById("downreceipts")
 let data = document.getElementById("data")
+let pindivs = document.getElementById("pindiv")
 
 // dotscontainer.sty
 savingsPage.style.display = "none"
 investPage.style.display = "none"
 accountpage.style.display = "none"
-addmoney.style.display= 'none'
-confirms.style.display= 'none'
-Transfer.style.display= 'none'
+addmoney.style.display = 'none'
+confirms.style.display = 'none'
+Transfer.style.display = 'none'
 transfermoney.style.display = "none"
 balance.style.display = "none"
 confirmTransfer.style.display = "none"
@@ -93,12 +95,12 @@ function checkAuth(params) {
                     console.log(data)
                     const dataArray = Object.values(data);
                     console.log(dataArray);
-                    
+
                     console.log(auth.currentUser.Email)
                     console.log(auth.currentUser.email)
-                    let mainUser =auth.currentUser.email
+                    let mainUser = auth.currentUser.email
                     console.log(mainUser)
-                    validUser = dataArray.find((element)=>element.Email === mainUser)
+                    validUser = dataArray.find((element) => element.Email === mainUser)
                     console.log(validUser);
                     amounts.innerHTML = validUser.currentBalance
                     showmoneys.innerHTML = validUser.currentBalance
@@ -220,13 +222,13 @@ function logout(event) {
             window.location.href = "login.html"
         })
 }
-function addMoney(params) { 
-    addmoney.style.display= 'block'
+function addMoney(params) {
+    addmoney.style.display = 'block'
     console.log(validUser.Email)
     addEmail.value = validUser.Email
 }
-function next(params) { 
-    confirms.style.display= 'block'
+function next(params) {
+    confirms.style.display = 'block'
     // console.log(auth.currentUser.Email)
     amout.innerHTML = amnt.value
 }
@@ -293,26 +295,26 @@ function balances() {
     balance.style.display = "block"
 }
 
-function bal(){
+function bal() {
     console.log(validUser);
     // let convalidUser =Object.values(validUser)
     // console.log(convalidUser);
-    
+
     enter.value = validUser.accountNumber
     balance.style.display = "none"
 }
 
-function banks(){
-    bank.style.display= "block"
+function banks() {
+    bank.style.display = "block"
 }
 
-function listed(val){
+function listed(val) {
     enter1.value = val
-    bank.style.display= "none"
+    bank.style.display = "none"
 }
 let masterUser;
-function contin(){
-    console.log(enter.value,enter1.value,enter2.value,enter3.value,enter4.value)
+function contin() {
+    console.log(enter.value, enter1.value, enter2.value, enter3.value, enter4.value)
     var database = firebase.database();
     var starCountRef = database.ref('users');
     starCountRef.orderByChild('accountNumber').equalTo(enter2.value).on('value', (snapshot) => {
@@ -323,19 +325,19 @@ function contin(){
         if (!data) {
             alert('account not Found')
         }
-        else if(enter.value == "" || enter1.value == "" || enter2.value == "" || enter3.value == "" || enter4.value == ""){
+        else if (enter.value == "" || enter1.value == "" || enter2.value == "" || enter3.value == "" || enter4.value == "") {
             alert("Fill all inputs")
         }
         else {
             const userId = Object.keys(data)[0];
-             masterUser = data[userId]
+            masterUser = data[userId]
             // console.log(user.currentBalance)
             // let newBalance = Number(enter3.value) +  Number(user.currentBalance)
             // database.ref('users/' + userId).update({
             //     currentBalance: newBalance
             // }).then(() => {
             //     alert(`You have send ${Number(enter3.value)} Successfully`)
-                contain.innerHTML = enter.value
+            contain.innerHTML = enter.value
             contain1.innerHTML = enter2.value
             contain2.innerHTML = enter1.value
             let date = new Date()
@@ -352,91 +354,124 @@ function contin(){
             //     alert('error sending fund' + error.message)
             // })
         }
-
+        enter.value == ""
+        enter1.value == ""
+        enter2.value == ""
+        enter3.value == ""
+        enter4.value == ""
     })
-    
+
 }
 
-function rem(){
+function rem() {
     try {
         console.log(pins.value)
         let date = new Date()
         let todate = date.toLocaleDateString();
         var database = firebase.database();
         var starCountRef = database.ref('users');
-        starCountRef.orderByChild('accountNumber').equalTo(enter.value).on('value', (snapshot) => {
+        starCountRef.orderByChild('accountNumber').equalTo(enter.value).once('value', (snapshot) => {
             const data = snapshot.val();
             console.log(data)
             console.log(snapshot.val())
             const userId = Object.keys(data)[0];
-            const userData =data[userId]
+            const userData = data[userId]
             console.log(userData)
             if (userData.pin === Number(pins.value)) {
-                // alert('Enter a correct pin')
+                alert('Enter a correct pin')
                 return;
             }
             let details = {
                 from: validUser.displayName,
                 to: masterUser.displayName,
                 bank: enter1.value,
-                date:todate,
+                date: todate,
                 fee: 10.26,
-                amount:enter3.value,
-                narration:enter4.value
+                amount: enter3.value,
+                narration: enter4.value
             }
-            
-            let removedmoney = Number(userData.currentBalance)- Number(enter3.value) - 10.26
+
+            let removedmoney = Number(userData.currentBalance) - Number(enter3.value) - 10.26
             const transactionHistory = userData.transactions || []
             let initailId = transactionHistory.length + 1
-    
-    
-            let newHistory= {
-                id:initailId,
+
+
+            let newHistory = {
+                id: initailId,
                 ...details
             }
             transactionHistory.push(newHistory)
-    
+
             database.ref('users/' + userId).update({
-                transactions:transactionHistory,
-                currentBalance:userData.currentBalance
-            })
-            confirmTransfer.style.display = "none"
-            left.style.display = "none"
-            successful.style.display = "block"
-            document.body.appendChild(confirmTransfer);
-            userData.currentBalance = removedmoney
-    
-            showmoney = userData.currentBalance
-            showmoney = removedmoney
-            console.log(showmoney);
-    
-            console.log(userData.currentBalance)
-        })
-        starCountRef.orderByChild('accountNumber').equalTo(enter2.value).once('value', (snapshot) => {
-            const data = snapshot.val();
-            console.log(data)
-            console.log(snapshot.val())
-            
-            const userId = Object.keys(data)[0];
-            
-                const user = data[userId]
-                console.log(user.currentBalance)
-                let newBalance = Number(enter3.value) +  Number(user.currentBalance)
-                database.ref('users/' + userId).update({
-                    currentBalance: newBalance
-                }).then(() => {
-                    alert(`You have send ${Number(enter3.value)} Successfully`)
-                }).catch((error) => {
-                    console.log(error);
-                    alert('error sending fund' + error.message)
+                transactions: transactionHistory,
+                currentBalance: removedmoney
+            }).then(()=>{
+                starCountRef.orderByChild('accountNumber').equalTo(enter2.value).once('value', (snapshot) => {
+                    const data = snapshot.val();
+                    console.log(data)
+                    console.log(snapshot.val())
+        
+                    const userId = Object.keys(data)[0];
+        
+                    const user = data[userId]
+                    console.log(user.currentBalance)
+                    const receivertransactionHistory = user.transactions || []
+                    console.log(receivertransactionHistory)
+                    let receiverdetails = {
+                        from: validUser.displayName,
+                        to: masterUser.displayName,
+                        bank: enter1.value,
+                        date: todate,
+                        fee: 10.26,
+                        amount: enter3.value,
+                        narration: enter4.value
+                    }
+                    let receiverId = receivertransactionHistory.length + 1
+        
+        
+                    let receiverHistory = {
+                        id: receiverId,
+                        ...receiverdetails
+                    }
+                    receivertransactionHistory.push(receiverHistory)
+                    let newBalance = Number(enter3.value) + Number(user.currentBalance)
+                    database.ref('users/' + userId).update({
+                        currentBalance: newBalance,
+                        transactions: receivertransactionHistory,
+                    }).then(() => {
+                        console.log(user.transactions,'history')
+                        alert(`You have send ${Number(enter3.value)} Successfully`)
+                        user.currentBalance = newBalance
+                        console.log(user.currentBalance)
+                    }).catch((error) => {
+                        console.log(error);
+                        alert('error sending fund' + error.message)
+                    })
                 })
+                confirmTransfer.style.display = "none"
+                left.style.display = "none"
+                successful.style.display = "block"
+                document.body.appendChild(confirmTransfer);
+                userData.currentBalance = removedmoney
+    
+                showmoneys = userData.currentBalance
+                showmoneys = removedmoney
+                console.log(showmoneys);
+    
+                console.log(userData.currentBalance)
+                enter.value = ""
+                enter1.value = ""
+                enter2.value = ""
+                enter3.value = ""
+                enter4.value = ""  
+            })
         })
     } catch (error) {
         console.log(error)
     }
 }
 let removedmoney;
-function receipt(){
+function receipt() {
     pindivs.style.display = "none"
     btnconfirm.style.display = "none"
     topreceipts.style.display = "block"
@@ -445,13 +480,13 @@ function receipt(){
     document.body.innerHTML = confirmTransfer.innerHTML
     setTimeout(() => {
         alert("d")
-       document.body.innerHTML = ""
-       window.location.href = "dashboard.html"
+        document.body.innerHTML = ""
+        window.location.href = "dashboard.html"
     }, 5000);
     window.print('confirmTransfer')
     showmoney = removedmoney
 }
 
-function ret(){
+function ret() {
     window.location.href = "dashboard.html"
 }
