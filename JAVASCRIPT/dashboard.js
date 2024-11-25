@@ -44,6 +44,30 @@ let topreceipts = document.getElementById("topreceipts")
 let downreceipts = document.getElementById("downreceipts")
 let data = document.getElementById("data")
 let pindivs = document.getElementById("pindiv")
+let acctbalances = document.getElementById("acctbalances")
+let entermt = document.getElementById("entermt")
+let airamount = document.getElementById("airamount")
+let airtimedetails = document.getElementById("airtimedetails")
+let selectbiller = document.getElementById("selectbiller")
+let amt1 = document.getElementById("amt1")
+let amt2 = document.getElementById("amt2")
+let amt3 = document.getElementById("amt3")
+let amt4 = document.getElementById("amt4")
+let phonenumber = document.getElementById("phonenumber")
+let buyair = document.getElementById("buyair")
+let errortext = document.getElementById("errortext")
+let airsuccess = document.getElementById("airsuccess")
+let dash = document.getElementById("dash")
+let dash1 = document.getElementById("dash1")
+let dash2 = document.getElementById("dash2")
+let dash3 = document.getElementById("dash3")
+let pindi = document.getElementById("pindi")
+let allTransactions = document.getElementById("allTransactions")
+let processing = document.getElementById("processing")
+let network = document.getElementById("network")
+let sim = document.getElementById("sim")
+let profilePictureInput = document.getElementById("profile-picture-input")
+let pix = document.getElementById("pix")
 
 // dotscontainer.sty
 savingsPage.style.display = "none"
@@ -59,8 +83,13 @@ confirmTransferhis.style.display = "none"
 successful.style.display = "none"
 topreceipts.style.display = "none"
 downreceipts.style.display = "none"
-// enter.style.display = "none"
-// bank.style.display = "none"
+
+sim.style.display = "none"
+airtimedetails.style.display = "none"
+selectbiller.style.display = "none"
+buyair.style.display = "none"
+airsuccess.style.display = "none"
+processing.style.display = "none"
 
 const firebaseConfig = {
     apiKey: "AIzaSyB6waZ87Or4bdQe9pr-5YI_KGdwB8T4AtI",
@@ -76,6 +105,7 @@ const firebaseConfig = {
 // Initialize Firebase
 const app = firebase.initializeApp(firebaseConfig);
 const auth = firebase.auth()
+const storage = firebase.storage();
 
 // to identify the particular user that signed up so as to assign their account balance to them
 let validUser;
@@ -405,14 +435,14 @@ function rem() {
             database.ref('users/' + userId).update({
                 transactions: transactionHistory,
                 currentBalance: removedmoney
-            }).then(()=>{
+            }).then(() => {
                 starCountRef.orderByChild('accountNumber').equalTo(enter2.value).once('value', (snapshot) => {
                     const data = snapshot.val();
                     console.log(data)
                     console.log(snapshot.val())
-        
+
                     const userId = Object.keys(data)[0];
-        
+
                     const user = data[userId]
                     console.log(user.currentBalance)
                     const receivertransactionHistory = user.transactions || []
@@ -427,8 +457,8 @@ function rem() {
                         narration: enter4.value
                     }
                     let receiverId = receivertransactionHistory.length + 1
-        
-        
+
+
                     let receiverHistory = {
                         id: receiverId,
                         ...receiverdetails
@@ -439,7 +469,7 @@ function rem() {
                         currentBalance: newBalance,
                         transactions: receivertransactionHistory,
                     }).then(() => {
-                        console.log(user.transactions,'history')
+                        console.log(user.transactions, 'history')
                         alert(`You have send ${Number(enter3.value)} Successfully`)
                         user.currentBalance = newBalance
                         console.log(user.currentBalance)
@@ -453,17 +483,17 @@ function rem() {
                 successful.style.display = "block"
                 document.body.appendChild(confirmTransfer);
                 userData.currentBalance = removedmoney
-    
+
                 showmoneys = userData.currentBalance
                 showmoneys = removedmoney
                 console.log(showmoneys);
-    
+
                 console.log(userData.currentBalance)
                 enter.value = ""
                 enter1.value = ""
                 enter2.value = ""
                 enter3.value = ""
-                enter4.value = ""  
+                enter4.value = ""
             })
         })
     } catch (error) {
@@ -490,3 +520,205 @@ function receipt() {
 function ret() {
     window.location.href = "dashboard.html"
 }
+
+function line(val) {
+    network.value = val;
+    sim.style.display = "none"
+}
+function buyairtimediv() {
+    selectbiller.style.display = "block"
+    console.log(selectbiller)
+    // transfermoney.style.display = "none"
+    // Transfer.style.display = "none"
+    // right.style.display = "none"
+    // addmoney.style.display = "none"
+    // transHist.style.display = "none"
+}
+
+function bill() {
+    sim.style.display = "block"
+}
+
+function acctdebit() {
+    acctbalances.style.display = "block"
+}
+function baldebit() {
+    entermt.value = validUser.accountNumber
+    acctbalances.style.display = "none"
+}
+function aircon() {
+    if (network.value == "") {
+        alert('select network')
+    }
+    else if (phonenumber.value == "") {
+        alert('Enter phonenumber')
+    }
+    else if (phonenumber.value.length == !11 || isNaN(phonenumber)) {
+        errortext.textContent = "Write an 11 digits number"
+        airtimedetails.style.display = "block"
+    } else {
+        airtimedetails.style.display = "block"
+        selectbiller.style.display = "none"
+    }
+    // else if(phonenumber.value.length == !11){
+    //     errortext.textContent = ""
+    // }
+    // else{
+    //     airtimedetails.style.display = "block"
+    //     selectbiller.style.display = "none"
+    // }
+}
+function amtcon() {
+    // right.style.display = "none"
+    selectbiller.style.display = "none"
+    airtimedetails.style.display = "none"
+    buyair.style.display = "block"
+    amt1.innerHTML = entermt.value
+    amt2.innerHTML = phonenumber.value
+    let date = new Date()
+    let todate = date.toLocaleDateString();
+    amt3.innerHTML = todate
+    amt4.innerHTML = airamount.value
+
+}
+function mer() {
+    buyair.style.display = "none"
+    let airtimepassword = dash.value + dash1.value + dash2.value + dash3.value
+    console.log(airtimepassword);
+    console.log(entermt.value)
+    let date = new Date()
+    let todate = date.toLocaleDateString();
+    var database = firebase.database();
+    var starCountRef = database.ref('users');
+
+    starCountRef.orderByChild('accountNumber').equalTo(entermt.value).once('value', (snapshot) => {
+        const data = snapshot.val();
+        console.log(data)
+        console.log(snapshot.val())
+        const userId = Object.keys(data)[0];
+        const userData = data[userId]
+        console.log(userData)
+        if (userData.pin == Number(airtimepassword)) {
+            console.log('ok')
+            processing.style.display = "block"
+        }
+        else {
+            alert("Enter correct pin")
+        }
+    })
+
+}
+function bak() {
+    airtimedetails.style.display = "block"
+    buyair.style.display = "none"
+}
+function das(ev) {
+    ev.preventDefault()
+    let allInp = document.querySelectorAll(".ddd")
+    for (let i = 0; i < allInp.length - 1; i++) {
+        allInp[i].addEventListener("input", () => {
+            setTimeout(() => {
+                allInp[i + 1].focus()
+            }, 100);
+        })
+    }
+}
+function rev() {
+    processing.style.display = "none"
+    airsuccess.style.display = "block"
+    let date = new Date()
+    let todate = date.toLocaleDateString();
+    let details = {
+        from: validUser.displayName,
+        to: phonenumber.value,
+        date: todate,
+        amount: airamount.value
+    }
+
+    var database = firebase.database();
+    var starCountRef = database.ref('users');
+
+    starCountRef.orderByChild('accountNumber').equalTo(entermt.value).once('value', (snapshot) => {
+        const data = snapshot.val();
+        console.log(data)
+        console.log(snapshot.val())
+        const userId = Object.keys(data)[0];
+        const userData = data[userId]
+        console.log(userData)
+        let removedmoney = Number(userData.currentBalance) - Number(airamount.value) - 10.26
+        const transactionHistory = userData.transactions || []
+        let initailId = transactionHistory.length + 1
+
+
+        let newHistory = {
+            id: initailId,
+            ...details
+        }
+        transactionHistory.push(newHistory)
+
+        database.ref('users/' + userId).update({
+            currentBalance: removedmoney,
+            transactions: transactionHistory,
+        }).then(() => {
+            console.log(userData.transactions, 'history')
+            userData.currentBalance = removedmoney
+            alert(`You have recharge ${Number(airamount.value)} Successfully for ${Number(phonenumber.value)}`)
+            console.log(userData.currentBalance)
+        }).catch((error) => {
+            console.log(error);
+            alert('error sending fund' + error.message)
+        })
+    })
+    // fetch(`http://localhost:4567/signup/${logUser.id}`, {
+    //     headers: {
+    //         "Content-Type": "application/json"
+    //     },
+    //     method: "GET",
+    // })
+    //     .then((response) => response.json())
+    //     .then((data) => {
+    //         let removedairtime = data.accountBalance - airamount.value
+    //         data.accountBalance = removedairtime
+    //         data.transactions = [...data.transactions, details]
+    //         showmoney = data.accountBalance
+    //         showmoney = removedairtime
+    //         fetch(`http://localhost:4567/signup/${logUser.id}`, {
+    //             headers: {
+    //                 "Content-Type": "application/json"
+    //             },
+    //             method: "PATCH",
+    //             body: JSON.stringify(data)
+    //         })
+    //             .then((response) => response.json())
+    //             .then((data) => {
+    //             })
+    //     })
+}
+function airhome() {
+    window.location.href = "dashboard.html"
+}
+
+function uploadProfilePicture(event) {
+    const profileImage = document.getElementById("pix");
+    const fileInput = event.target;
+    if (fileInput.files && fileInput.files[0]) {
+        const reader = new FileReader();
+        reader.onload = function (e) {
+            const imageData = e.target.result;
+            profileImage.src = imageData; 
+            localStorage.setItem("profilePicture", imageData); 
+        };
+
+        reader.readAsDataURL(fileInput.files[0]);
+    }
+}
+
+function loadProfilePicture() {
+    const profileImage = document.getElementById("pix");
+    const storedImage = localStorage.getItem("profilePicture");
+    if (storedImage) {
+        profileImage.src = storedImage;
+    }
+}
+window.onload = loadProfilePicture;
+
